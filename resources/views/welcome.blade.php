@@ -8,6 +8,12 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel {{ app()->version() }}</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <style media="screen">
+          html {
+            background: url('/images/p15.jpg');
+            background-size: cover;
+          }
+        </style>
     </head>
     <body>
         <div class="conatiner">
@@ -46,7 +52,7 @@
 
             @endif
             <div class="content">
-              <p>Coloca Aqui texto</p>
+
             </div>
         </div>
     </body>

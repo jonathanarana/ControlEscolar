@@ -12,7 +12,7 @@
                     </header>
 
                     <div class="card-content">
-                        You are logged in!
+                        <img src="/images/uni.jpg" alt="">
                     </div>
                 </nav>
             </div>
