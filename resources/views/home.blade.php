@@ -7,7 +7,7 @@
                 <nav class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Dashboard
+                            Bienvenido
                         </p>
                     </header>
 

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Laravel {{ app()->version() }}</title>
+        <title>Universidad</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style media="screen">
           html {
