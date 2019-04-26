@@ -36,7 +36,7 @@ class HomeController extends Controller
     $user = new User;
     $user->name=$_POST['name'];
     $user->email=$_POST['email'];
-    $user->password=$_POST['password'];
+    $user->password=bcrypt($_POST['password']);
     $user->roll=$_POST['roll'];
     $user->matricula=$_POST['matricula'];
     $user->save();
@@ -58,6 +58,7 @@ class HomeController extends Controller
     $user = User::find($id);
     $user->name=$_POST['name'];
     $user->email=$_POST['email'];
+    $user->password=bcrypt($_POST['password']);
     $user->roll=$_POST['roll'];
     $user->matricula=$_POST['matricula'];
     $user->save();

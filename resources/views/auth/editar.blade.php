@@ -90,12 +90,32 @@
                         </div>
 
                         <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">Contraseña</label>
+                            </div>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" id="password" type="password" name="password" required>
+                                    </p>
+
+                                    @if ($errors->has('password'))
+                                        <p class="help is-danger">
+                                            {{ $errors->first('password') }}
+                                        </p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
                             <div class="field-label"></div>
 
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Registrar</button>
+                                        <button type="submit" class="button is-primary">Actualizar</button>
                                     </div>
                                 </div>
                             </div>
