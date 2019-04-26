@@ -6,31 +6,24 @@
         <div class="column">
             <div class="card">
                 <header class="card-header">
-                    <p class="card-header-title">lista de personas</p>
+                    <p class="card-header-title">lista de Calificaiones de {{$user->name}}</p>
                 </header>
 
                 <div class="card-content">
                     <table class="table is-fullwidth is-bordered is-striped">
                       <thead>
                         <tr>
-                          <th>Id</th>
-                          <th>Nombre</th>
-                          <th>Maestro</th>
-                          <th>Opciones</th>
+                          <th>Materia</th>
+                          <th>Calificacion</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($materias as $materia)
                           <tr>
-                            <td>{{$materia->id}}</td>
+
                             <td>{{$materia->nombre}}</td>
-                            <td>{{$materia->maestro}}</td>
-                            <td>
-                              @if (Auth::user()->roll==1)
-                                <a href="/editarm/{{$materia->id}}" class="button is-link">Editar</a>
-                              @endif
-                              <a href="/relacion/{{$materia->id}}" class="button is-link">Alumnos</a>
-                            </td>
+                            <td>{{$materia->calificacion}}</td>
+
                           </tr>
                         @endforeach
                       </tbody>

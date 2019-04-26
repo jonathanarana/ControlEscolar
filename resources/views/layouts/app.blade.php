@@ -34,11 +34,17 @@
                             @if (Auth::guest())
                                 <a class="navbar-item " href="{{ route('login') }}">Ingresa</a>
                             @else
-                                <a class="navbar-item" href="/registro">Nueva Persona</a>
-                                <a class="navbar-item" href="/lista">Lista de Personas</a>
+                                @if (Auth::user()->roll==1)
+                                  <a class="navbar-item" href="/registro">Nueva Persona</a>
+                                  <a class="navbar-item" href="/lista">Lista de Personas</a>
+                                  <a class="navbar-item" href="/materia">Nueva Materia</a>
+                                @endif
+                                @if (Auth::user()->roll<3)
+                                  <a class="navbar-item" href="/lmateria">Lista de Materias</a>
+                                @elseif (Auth::user()->roll==3)
+                                  <a class="navbar-item" href="/calificaciones/{{Auth::user()->id}}">Lista de Calificaciones</a>
+                                @endif
 
-                                <a class="navbar-item" href="/materia">Nueva Materia</a>
-                                <a class="navbar-item" href="/lmateria">Lista de Materias</a>
 
                                 <div class="navbar-item has-dropdown is-hoverable">
 

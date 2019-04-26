@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class HomeController extends Controller
@@ -78,7 +79,12 @@ class HomeController extends Controller
   }
 
   public function lmateria(){
-    $materias=DB::table('materias')->get();
+    if (Auth::user()->roll==2) {
+      $materias=DB::table('materias')->where('maestro','=',Auth::user()->id)->get();
+    }
+    else{
+      $materias=DB::table('materias')->get();
+    }
     return view('admin.lmaterias',compact('materias'));
   }
 
@@ -128,5 +134,16 @@ class HomeController extends Controller
     ->get();
     //dd($relacion);
     return view('admin.relacion',compact('relacion'));
+  }
+
+  public function calificaciones($id){
+    $user = User::find($id);
+    $materias=DB::table('relacion')
+    ->where('alumno', '=',$id)
+    ->join('materias', 'materias.id', '=', 'relacion.materia')
+    ->select('materias.*','relacion.calificacion')
+    ->get();
+    //dd($relacion);
+    return view('admin.lcalificaciones',compact('materias','user'));
   }
 }

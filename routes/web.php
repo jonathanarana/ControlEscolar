@@ -51,3 +51,6 @@ Route::post('/calificar/{id}', 'HomeController@calificarse');
 
 
 Route::get('/relacion/{id}', 'HomeController@relacion');
+
+
+Route::get('/calificaciones/{id}', 'HomeController@calificaciones');

@@ -31,6 +31,7 @@
                               <a href="/editar/{{$user->id}}" class="button is-link">Editar</a>
                               @if ($user->roll==3)
                                 <a href="/inscribir/{{$user->id}}" class="button is-link">Inscribir</a>
+                                <a href="/calificaciones/{{$user->id}}" class="button is-link">Calificaciones</a>
                               @endif
                             </td>
                           </tr>
